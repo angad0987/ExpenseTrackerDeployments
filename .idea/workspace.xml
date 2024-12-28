@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99e84d5a-3dc0-451d-a353-0e9b859f566b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cloudformation-template-initial-infra.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-infrastructure.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-infrastructure.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

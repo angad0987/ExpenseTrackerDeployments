@@ -75,7 +75,7 @@ Resources:
     Properties:
       VpcId: !Ref VPC
   PublicRoute:
-    Type: AWS::EC2:Route
+    Type: AWS::EC2::Route
     DependsOn: GatewayAttachment
     Properties:
       RouteTableId: !Ref PublicRouteTable
@@ -154,7 +154,7 @@ Resources:
 
   # configurations related to elastic load balancer
   PublicLoadBalancerSG:
-    Type: AWS::EC2:SecurityGroup
+    Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Access to public facing load balancer
       VpcId: !Ref VPC
@@ -163,7 +163,7 @@ Resources:
           IpProtocol: -1
 
   PublicLoadBalancer:
-    Type: AWS:ElasticLoadBalancingV2::LoadBalancer
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
       Scheme: internet-facing
       LoadBalancerAttributes:
@@ -205,7 +205,7 @@ Resources:
 # now we are defining Configurations related to ECS cluster
 # ECS is elastic container service which creates cluster of backend services or containerized applications
   ECSCluster:
-    Type: AWS::ECS:Cluster
+    Type: AWS::ECS::Cluster
     Properties:
       ClusterName: 'expense-tracker'
   ContainerSecurityGroup:

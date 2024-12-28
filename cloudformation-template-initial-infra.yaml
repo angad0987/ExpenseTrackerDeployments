@@ -33,7 +33,7 @@ Resources:
       MapPublicIpOnLaunch: true
 
   PublicSubnetTwo:
-    Type: AWS::EC2::VPC
+    Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: !Select
         - 0

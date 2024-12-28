@@ -208,16 +208,16 @@ Resources:
     Type: AWS::ECS:Cluster
     Properties:
       ClusterName: 'expense-tracker'
-    ContainerSecurityGroup:
-      Type: AWS::EC2::SecurityGroup
-      Properties:
-        GroupDescription: Access to the containers
-        VpcId: !Ref VPC
-        SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 0
-            ToPort: 65535
-            SourceSecurityGroupId: !Ref PublicLoadBalancerSG
+  ContainerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Access to the containers
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 0
+          ToPort: 65535
+          SourceSecurityGroupId: !Ref PublicLoadBalancerSG
 
 
 

@@ -166,8 +166,8 @@ Resources:
     Properties:
       Scheme: internet-facing
       LoadBalancerAttributes:
-        - key: idle_timeout.timeout_seconds
-          value: 30
+        - Key: idle_timeout.timeout_seconds
+          Value: 30
       Subnets:
         - !Ref PublicSubnetOne
         - !Ref PublicSubnetTwo

@@ -19,8 +19,10 @@ Resources:
   VPC:
     Type: AWS::EC2::VPC
     Properties:
+      CidrBlock: "10.0.0.0/16"
       EnableDnsSupport: true
-      CidrBlock: !FindInMap ['SubnetConfig','VPC','CIDR']
+      EnableHostNames: true
+
 
   PublicSubnetOne:
     Type: AWS::EC2::Subnet

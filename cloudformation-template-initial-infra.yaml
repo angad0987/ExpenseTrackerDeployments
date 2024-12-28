@@ -20,7 +20,6 @@ Resources:
     Type: AWS::EC2::VPC
     Properties:
       EnableDnsSupport: true
-      EnableDnsResolution: true
       CidrBlock: !FindInMap ['SubnetConfig','VPC','CIDR']
 
   PublicSubnetOne:

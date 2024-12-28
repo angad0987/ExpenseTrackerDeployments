@@ -16,4 +16,36 @@ jobs:
         uses: actions/checkout@v2
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Deploy Infrastructure Stack
+        run: |
+          aws cloudformation deploy \
+          --template-file cloudformation-template--initial-infra.yaml \
+          --stack-name infrastructure-stack \
+          --capabilities CAPABILITY_NAMED_IAM
+          
+      - name: Output Infrastructure Stack Information
+        run: |
+          aws cloud formation describe-stacks \
+          --stack-name infrastructure-stack \
+          --query "Stacks[0].Outputs" \
+          > infrastructure-outputs.json \
+          cat infrastructure-outputs.json
+
+      - name: Upload infrastructure outputs to Amazon s3
+        env:
+          BUCKET_NAME: "expensetrackerinfra"
+          INFRA_FILE_NAME: "infrastructure-outputs.json"
+        run: |
+          if ! aws s3api head-bucket --bucket-name "$BUCKET_NAME"; then
+            aws s3 mb s3://$BUCKET_NAME --region ${{ env.AWS_REGION }}
+          else 
+            echo "Bucket $BUCKET_NAME Already Exists"
+          fi
+          aws s3 cp ${INFRA_FILE_NAME} s3://${BUCKET_NAME}/infrastructure-outputs.json
+                                                           
 

@@ -212,7 +212,7 @@ Resources:
   ContainerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Access to the containers
+      GroupDescription: Access to the containers in ecs
       VpcId: !Ref VPC
       SecurityGroupIngress:
         - IpProtocol: tcp

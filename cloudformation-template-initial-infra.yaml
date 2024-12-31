@@ -19,9 +19,9 @@ Resources:
   VPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: '10.0.0.0/16'
       EnableDnsSupport: true
       EnableDnsHostNames: true
+      CidrBlock: '10.0.0.0/16'
 
 
   PublicSubnetOne:
@@ -60,7 +60,7 @@ Resources:
         - 1
         - Fn::GetAZs: !Ref AWS::Region
       VpcId: !Ref VPC
-      CidrBlock: !FindInMap [ 'SubnetConfig','PrivateTwo','CIDR' ]
+      CidrBlock: !FindInMap [ 'SubnetConfig','PrivateTwo','CIDR']
 
   InternetGateway:
     Type: AWS::EC2::InternetGateway
@@ -169,7 +169,7 @@ Resources:
       Scheme: internet-facing
       LoadBalancerAttributes:
         - Key: idle_timeout.timeout_seconds
-          Value: 30
+          Value: '30'
       Subnets:
         - !Ref PublicSubnetOne
         - !Ref PublicSubnetTwo

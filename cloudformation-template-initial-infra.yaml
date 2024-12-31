@@ -107,12 +107,14 @@ Resources:
 
   NatGatewayOne:
     Type: AWS::EC2::NatGateway
+    DependsOn: NatGatewayOneAttachment
     Properties:
       AllocationId: !GetAtt NatGatewayOneAttachment.AllocationId
       SubnetId: !Ref PublicSubnetOne
 
   NatGatewayTwo:
     Type: AWS::EC2::NatGateway
+    DependsOn: NatGatewayTwoAttachment
     Properties:
       AllocationId: !GetAtt NatGatewayTwoAttachment.AllocationId
       SubnetId: !Ref PublicSubnetTwo

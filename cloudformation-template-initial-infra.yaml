@@ -20,8 +20,14 @@ Resources:
     Type: AWS::EC2::VPC
     Properties:
       EnableDnsSupport: true
-      EnableDnsHostNames: true
       CidrBlock: '10.0.0.0/16'
+
+  VPCAttachment:
+    Type: AWS::EC2::VpcAttribute
+    Properties:
+      VpcId: !Ref VPC
+      EnableDnsHostnames: true
+
 
 
   PublicSubnetOne:

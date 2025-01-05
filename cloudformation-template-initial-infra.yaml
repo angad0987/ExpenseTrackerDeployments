@@ -226,16 +226,16 @@ Resources:
   Outputs:
     PublicSubnetOne:
       Description: Public subnet one
-      Value: !Ref 'PublicSubnetOne'
+      Value: !Ref PublicSubnetOne
     PublicSubnetTwo:
       Description: Public subnet two
-      Value: !Ref 'PublicSubnetTwo'
+      Value: !Ref PublicSubnetTwo
     PrivateSubnetOne:
       Description: Private subnet one
-      Value: !Ref 'PrivateSubnetOne'
+      Value: !Ref PrivateSubnetOne
     PrivateSubnetTwo:
       Description: Private subnet two
-      Value: !Ref 'PrivateSubnetTwo'
+      Value: !Ref PrivateSubnetTwo
     ECSCluster:
       Description: ECS Cluster for services
       Value: !Ref ECSCluster
@@ -244,10 +244,10 @@ Resources:
       Value: !FindInMap [ 'SubnetConfig', 'VPC', 'CIDR' ]
     PublicLoadBalancer:
       Description: Load Balancer defined in the Public subnets
-      Value: !Ref 'PublicLoadBalancer'
+      Value: !Ref PublicLoadBalancer
     PublicLoadBalancerSG:
       Description: Public load balancer sg
-      Value: !Ref 'PublicLoadBalancerSG'
+      Value: !Ref PublicLoadBalancerSG
     ExternalUrl:
       Description: The url of the external load balancer
       Value: !Sub http://${PublicLoadBalancer.DNSName}

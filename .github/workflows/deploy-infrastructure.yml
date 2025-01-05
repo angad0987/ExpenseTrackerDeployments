@@ -33,7 +33,8 @@ jobs:
           aws cloudformation describe-stacks \
           --stack-name infrastructure-stack \
           --query "Stacks[0].Outputs" \
-          > infrastructure-outputs.json  cat infrastructure-outputs.json
+          > infrastructure-outputs.json && \
+          cat infrastructure-outputs.json
 
       - name: Upload infrastructure outputs to Amazon s3
         env:

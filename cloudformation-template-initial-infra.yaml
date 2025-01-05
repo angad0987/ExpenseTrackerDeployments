@@ -224,9 +224,6 @@ Resources:
           SourceSecurityGroupId: !Ref PublicLoadBalancerSG
 
   Outputs:
-    VpcId:
-      Description: The ID of the VPC that this stack is deployed in
-      Value: !Ref 'VPC'
     PublicSubnetOne:
       Description: Public subnet one
       Value: !Ref 'PublicSubnetOne'

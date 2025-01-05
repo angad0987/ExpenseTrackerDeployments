@@ -31,9 +31,9 @@ jobs:
       - name: Output Infrastructure Stack Information
         run: |
           aws cloudformation describe-stacks \
-          --stack-name infrastructure-stack \
-          --query "Stacks[0].Outputs" \
-          > infrastructure-outputs.json && \
+            --stack-name infrastructure-stack \
+            --query "Stacks[0].Outputs" \
+            > infrastructure-outputs.json && \
           cat infrastructure-outputs.json
 
       - name: Upload infrastructure outputs to Amazon s3

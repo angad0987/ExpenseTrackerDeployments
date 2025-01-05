@@ -60,14 +60,14 @@ Resources:
       VpcId: !Ref VPC
       CidrBlock: !FindInMap ['SubnetConfig','PrivateTwo','CIDR']
 
-  MyInternetGateway:
+  InternetGateway:
     Type: AWS::EC2::InternetGateway
   GatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId: !Ref VPC
-      InternetGatewayId: !Ref MyInternetGateway
-    DependsOn: MyInternetGateway
+      InternetGatewayId: !Ref InternetGateway
+    DependsOn: InternetGateway
 
 
   PublicRouteTable:

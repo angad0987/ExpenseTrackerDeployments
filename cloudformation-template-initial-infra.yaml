@@ -209,7 +209,7 @@ Resources:
   ECSCluster:
     Type: AWS::ECS::Cluster
     Properties:
-      ClusterName: 'expense-tracker'
+      ClusterName: 'expense--tracker'
   ContainerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:

@@ -223,31 +223,31 @@ Resources:
           ToPort: 65535
           SourceSecurityGroupId: !Ref PublicLoadBalancerSG
 
-  Outputs:
-    PublicSubnetOneOuput:
-      Description: Public subnet one
-      Value: !Ref PublicSubnetOne
-    PublicSubnetTwoOuput:
-      Description: Public subnet two
-      Value: !Ref PublicSubnetTwo
-    PrivateSubnetOneOuput:
-      Description: Private subnet one
-      Value: !Ref PrivateSubnetOne
-    PrivateSubnetTwoOuput:
-      Description: Private subnet two
-      Value: !Ref PrivateSubnetTwo
-    ECSClusterOuput:
-      Description: ECS Cluster for services
-      Value: !Ref ECSCluster
-    VPCCIDROuput:
-      Description: CIDR of the VPC
-      Value: !FindInMap [ 'SubnetConfig', 'VPC', 'CIDR' ]
-    PublicLoadBalancerOuput:
-      Description: Load Balancer defined in the Public subnets
-      Value: !Ref PublicLoadBalancer
-    PublicLoadBalancerSGOuput:
-      Description: Public load balancer sg
-      Value: !Ref PublicLoadBalancerSG
+Outputs:
+  PublicSubnetOneOuput:
+    Description: Public subnet one
+    Value: !Ref PublicSubnetOne
+  PublicSubnetTwoOuput:
+    Description: Public subnet two
+    Value: !Ref PublicSubnetTwo
+  PrivateSubnetOneOuput:
+    Description: Private subnet one
+    Value: !Ref PrivateSubnetOne
+  PrivateSubnetTwoOuput:
+    Description: Private subnet two
+    Value: !Ref PrivateSubnetTwo
+  ECSClusterOuput:
+    Description: ECS Cluster for services
+    Value: !Ref ECSCluster
+  VPCCIDROuput:
+    Description: CIDR of the VPC
+    Value: !FindInMap [ 'SubnetConfig', 'VPC', 'CIDR' ]
+  PublicLoadBalancerOuput:
+    Description: Load Balancer defined in the Public subnets
+    Value: !Ref PublicLoadBalancer
+  PublicLoadBalancerSGOuput:
+    Description: Public load balancer sg
+    Value: !Ref PublicLoadBalancerSG
 #    ExternalUrl:
 #      Description: The url of the external load balancer
 #      Value: !Sub http://${PublicLoadBalancer.DNSName}

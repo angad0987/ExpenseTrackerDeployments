@@ -224,28 +224,28 @@ Resources:
           SourceSecurityGroupId: !Ref PublicLoadBalancerSG
 
 Outputs:
-  PublicSubnetOneOuput:
+  PublicSubnetOne:
     Description: Public subnet one
     Value: !Ref PublicSubnetOne
-  PublicSubnetTwoOuput:
+  PublicSubnetTwo:
     Description: Public subnet two
     Value: !Ref PublicSubnetTwo
-  PrivateSubnetOneOuput:
+  PrivateSubnetOne:
     Description: Private subnet one
     Value: !Ref PrivateSubnetOne
-  PrivateSubnetTwoOuput:
+  PrivateSubnetTwo:
     Description: Private subnet two
     Value: !Ref PrivateSubnetTwo
-  ECSClusterOuput:
+  ECSCluster:
     Description: ECS Cluster for services
     Value: !Ref ECSCluster
-  VPCCIDROuput:
+  VPCCIDR:
     Description: CIDR of the VPC
     Value: !FindInMap [ 'SubnetConfig', 'VPC', 'CIDR' ]
-  PublicLoadBalancerOuput:
+  PublicLoadBalancer:
     Description: Load Balancer defined in the Public subnets
     Value: !Ref PublicLoadBalancer
-  PublicLoadBalancerSGOuput:
+  PublicLoadBalancerSG:
     Description: Public load balancer sg
     Value: !Ref PublicLoadBalancerSG
 #    ExternalUrl:

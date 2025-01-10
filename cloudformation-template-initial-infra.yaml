@@ -248,9 +248,9 @@ Resources:
     PublicLoadBalancerSG:
       Description: Public load balancer sg
       Value: !Ref PublicLoadBalancerSG
-    ExternalUrl:
-      Description: The url of the external load balancer
-      Value: !Sub http://${PublicLoadBalancer.DNSName}
+#    ExternalUrl:
+#      Description: The url of the external load balancer
+#      Value: !Sub http://${PublicLoadBalancer.DNSName}
 
 
 
